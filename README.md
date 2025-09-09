@@ -1,6 +1,9 @@
 Scholarship Management System
+
 Course:ITP41E – System Integration and Architecture 2
+
 Team Name: MDR-J 
+
 Repository: https://github.com/Ukinamo/ITE412_SIA2_MDR-J_Project.git
 
 Team Members & Roles
