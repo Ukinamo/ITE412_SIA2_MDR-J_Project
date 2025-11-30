@@ -36,7 +36,7 @@
                             @else bg-secondary @endif">
                             {{ ucfirst($application->status) }}
                         </span><br>
-                        <strong>Amount:</strong> ₱{{ number_format($application->program->amount, 2) }}<br>
+                        <strong>Amount:</strong> ₱{{ number_format($application->program->amount) }}<br>
                         <strong>Submitted:</strong>
                         {{ $application->submitted_at ? $application->submitted_at->format('M d, Y') : $application->created_at->format('M d, Y') }}
                     </div>

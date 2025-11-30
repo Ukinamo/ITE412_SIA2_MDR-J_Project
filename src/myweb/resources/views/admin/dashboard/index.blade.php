@@ -6,7 +6,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-2 mb-4">
-        <div class="card text-white bg-danger">
+        <div class="card text-white" style="background-color: #D32F2F;">
             <div class="card-body text-center">
                 <h2 class="card-title">{{ $totalApplications }}</h2>
                 <p class="card-text">Total Applications</p>
@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="col-md-2 mb-4">
-        <div class="card text-white bg-warning">
+        <div class="card text-dark" style="background-color: #FBC02D;">
             <div class="card-body text-center">
                 <h2 class="card-title">{{ $pendingApplications }}</h2>
                 <p class="card-text">Pending Review</p>
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="col-md-2 mb-4">
-        <div class="card text-white bg-info">
+        <div class="card text-white" style="background-color: #4CAF50;">
             <div class="card-body text-center">
                 <h2 class="card-title">{{ $underReviewApplications }}</h2>
                 <p class="card-text">Under Review</p>
@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="col-md-2 mb-4">
-        <div class="card text-white bg-success">
+        <div class="card text-white" style="background-color: #2E7D32;">
             <div class="card-body text-center">
                 <h2 class="card-title">{{ $activePrograms }}</h2>
                 <p class="card-text">Active Programs</p>
@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="col-md-2 mb-4">
-        <div class="card text-white bg-primary">
+        <div class="card text-white" style="background-color: #388E3C;">
             <div class="card-body text-center">
                 <h2 class="card-title">{{ $totalStudents }}</h2>
                 <p class="card-text">Students</p>
@@ -51,7 +51,7 @@
         </div>
     </div>
     <div class="col-md-2 mb-4">
-        <div class="card text-white bg-secondary">
+        <div class="card text-white" style="background-color: #616161;">
             <div class="card-body text-center">
                 <h2 class="card-title">{{ $totalReviewers }}</h2>
                 <p class="card-text">Reviewers</p>
@@ -64,7 +64,7 @@
 <div class="row">
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header bg-danger text-white">
+            <div class="card-header text-white" style="background-color: #388E3C;">
                 <h5 class="mb-0"><i class="fas fa-list me-2"></i>Recent Applications</h5>
             </div>
             <div class="card-body">
@@ -87,10 +87,10 @@
                                 <td>{{ $application->program->name }}</td>
                                 <td>
                                     <span class="badge 
-                                        @if($application->status == 'approved') bg-success
-                                        @elseif($application->status == 'rejected') bg-danger
-                                        @elseif($application->status == 'under_review') bg-warning
-                                        @else bg-secondary @endif">
+                                        @if($application->status == 'approved') text-white" style="background-color: #2E7D32;"
+                                        @elseif($application->status == 'rejected') text-white" style="background-color: #D32F2F;"
+                                        @elseif($application->status == 'under_review') text-dark" style="background-color: #FBC02D;"
+                                        @else text-white" style="background-color: #616161;" @endif">
                                         {{ ucfirst($application->status) }}
                                     </span>
                                 </td>
@@ -103,7 +103,7 @@
                                 </td>
                                 <td>{{ $application->created_at->format('M d, Y') }}</td>
                                 <td>
-                                    <a href="{{ route('applications.show', $application) }}" class="btn btn-sm btn-outline-danger">
+                                    <a href="{{ route('applications.show', $application) }}" class="btn btn-sm text-white" style="background-color: #4CAF50; border-color: #4CAF50;">
                                         <i class="fas fa-eye"></i> View
                                     </a>
                                 </td>
@@ -113,7 +113,7 @@
                     </table>
                 </div>
                 <div class="text-center mt-3">
-                    <a href="{{ route('admin.applications.index') }}" class="btn btn-danger">
+                    <a href="{{ route('admin.applications.index') }}" class="btn text-white" style="background-color: #4CAF50; border-color: #4CAF50;">
                         <i class="fas fa-list me-2"></i>View All Applications
                     </a>
                 </div>
@@ -123,7 +123,7 @@
     
     <div class="col-md-4">
         <div class="card">
-            <div class="card-header bg-warning text-dark">
+            <div class="card-header text-dark" style="background-color: #81C784;">
                 <h5 class="mb-0"><i class="fas fa-chart-pie me-2"></i>Program Statistics</h5>
             </div>
             <div class="card-body">
@@ -135,7 +135,7 @@
                         <span>Active: {{ $program->active_applications_count }}</span>
                     </div>
                     <div class="progress mb-2" style="height: 8px;">
-                        <div class="progress-bar bg-warning" style="width: {{ $program->applications_count > 0 ? min(($program->active_applications_count / $program->applications_count) * 100, 100) : 0 }}%"></div>
+                        <div class="progress-bar" style="background-color: #4CAF50; width: {{ $program->applications_count > 0 ? min(($program->active_applications_count / $program->applications_count) * 100, 100) : 0 }}%"></div>
                     </div>
                     <div class="d-flex justify-content-between">
                         <small>Amount: ₱{{ number_format($program->amount) }}</small>
@@ -147,18 +147,18 @@
         </div>
         
         <div class="card mt-4">
-            <div class="card-header bg-info text-white">
+            <div class="card-header text-white" style="background-color: #43A047;">
                 <h5 class="mb-0"><i class="fas fa-rocket me-2"></i>Quick Actions</h5>
             </div>
             <div class="card-body">
                 <div class="d-grid gap-2">
-                    <a href="{{ route('admin.programs.create') }}" class="btn btn-danger">
+                    <a href="{{ route('admin.programs.create') }}" class="btn text-white" style="background-color: #4CAF50; border-color: #4CAF50;">
                         <i class="fas fa-plus-circle me-2"></i>Create New Program
                     </a>
-                    <a href="{{ route('admin.users.index') }}" class="btn btn-outline-danger">
+                    <a href="{{ route('admin.users.index') }}" class="btn text-white" style="background-color: #388E3C; border-color: #388E3C;">
                         <i class="fas fa-users me-2"></i>Manage Users
                     </a>
-                    <a href="{{ route('admin.messages.create') }}" class="btn btn-outline-danger">
+                    <a href="{{ route('admin.messages.create') }}" class="btn text-white" style="background-color: #43A047; border-color: #43A047;">
                         <i class="fas fa-envelope me-2"></i>Send Message
                     </a>
                 </div>

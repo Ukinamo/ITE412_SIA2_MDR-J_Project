@@ -6,8 +6,8 @@
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-8">
-        <div class="card border-warning">
-            <div class="card-header bg-warning text-white">
+        <div class="card" style="border-color: #FBC02D;">
+            <div class="card-header text-dark" style="background-color: #FBC02D;">
                 <h4 class="mb-0"><i class="fas fa-edit me-2"></i>Edit Scholarship Program</h4>
             </div>
             <div class="card-body">
@@ -56,7 +56,7 @@
 
                     <div class="mb-3">
                         <label class="form-label">Requirements</label>
-                        <div class="alert alert-info">
+                        <div class="alert text-white" style="background-color: #81C784;">
                             <small><i class="fas fa-info-circle me-1"></i> Add key-value pairs for program requirements (e.g., "Minimum GPA": "3.5 or higher")</small>
                         </div>
                         <div id="requirements-container">
@@ -81,7 +81,7 @@
                                                    placeholder="Requirement details" value="{{ $requirement['value'] }}" required>
                                         </div>
                                         <div class="col-md-1">
-                                            <button type="button" class="btn btn-outline-danger remove-requirement" {{ $loop->first ? 'disabled' : '' }}>
+                                            <button type="button" class="btn text-white remove-requirement" style="background-color: #D32F2F; border-color: #D32F2F;" {{ $loop->first ? 'disabled' : '' }}>
                                                 <i class="fas fa-times"></i>
                                             </button>
                                         </div>
@@ -101,7 +101,7 @@
                                                placeholder="Requirement details" value="{{ $value }}" required>
                                     </div>
                                     <div class="col-md-1">
-                                        <button type="button" class="btn btn-outline-danger remove-requirement" {{ $loop->first ? 'disabled' : '' }}>
+                                        <button type="button" class="btn text-white remove-requirement" style="background-color: #D32F2F; border-color: #D32F2F;" {{ $loop->first ? 'disabled' : '' }}>
                                             <i class="fas fa-times"></i>
                                         </button>
                                     </div>
@@ -119,14 +119,14 @@
                                            placeholder="e.g., 3.5 or higher" value="{{ old('requirements.0.value', '') }}" required>
                                 </div>
                                 <div class="col-md-1">
-                                    <button type="button" class="btn btn-outline-danger remove-requirement" disabled>
+                                    <button type="button" class="btn text-white remove-requirement" style="background-color: #D32F2F; border-color: #D32F2F;" disabled>
                                         <i class="fas fa-times"></i>
                                     </button>
                                 </div>
                             </div>
                             @endif
                         </div>
-                        <button type="button" id="add-requirement" class="btn btn-outline-secondary btn-sm mt-2">
+                        <button type="button" id="add-requirement" class="btn text-white btn-sm mt-2" style="background-color: #43A047; border-color: #43A047;">
                             <i class="fas fa-plus me-1"></i>Add Requirement
                         </button>
                         @error('requirements')
@@ -144,10 +144,10 @@
                     </div>
 
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-warning btn-lg">
+                        <button type="submit" class="btn text-dark btn-lg" style="background-color: #FBC02D; border-color: #FBC02D;">
                             <i class="fas fa-save me-2"></i>Update Program
                         </button>
-                        <a href="{{ route('programs.show', $program) }}" class="btn btn-outline-secondary">
+                        <a href="{{ route('programs.show', $program) }}" class="btn" style="background-color: #EEEEEE; border-color: #BDBDBD;">
                             <i class="fas fa-arrow-left me-2"></i>Cancel
                         </a>
                     </div>
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
                        placeholder="Requirement details" required>
             </div>
             <div class="col-md-1">
-                <button type="button" class="btn btn-outline-danger remove-requirement">
+                <button type="button" class="btn text-white remove-requirement" style="background-color: #D32F2F; border-color: #D32F2F;">
                     <i class="fas fa-times"></i>
                 </button>
             </div>

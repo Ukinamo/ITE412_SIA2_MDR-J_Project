@@ -39,7 +39,7 @@
                             <small class="text-muted">{{ $application->user->email }}</small>
                         </td>
                         <td>{{ $application->program->name }}</td>
-                        <td>${{ number_format($application->program->amount, 2) }}</td>
+                        <td>₱{{ number_format($application->program->amount) }}</td>
                         <td>
                             <span class="badge 
                                 @if($application->status == 'approved') bg-success

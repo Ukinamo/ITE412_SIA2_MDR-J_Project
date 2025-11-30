@@ -554,8 +554,8 @@
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <div class="d-none d-md-block">
-                    <h5 class="mb-0 text-dark">Admin Dashboard</h5>
-                    <small class="text-muted">Welcome back, {{ Auth::user()->name ?? 'Admin' }}</small>
+                    <h5 class="mb-0 text-dark">Adminintrator</h5>
+                    <small class="text-muted">Welcome {{ Auth::user()->role ?? 'Admin' }}, {{ Auth::user()->name ?? 'Admin' }}</small>
                 </div>
             </div>
             <div class="d-flex align-items-center gap-4">
